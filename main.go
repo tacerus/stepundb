@@ -31,7 +31,8 @@ import (
 type lines [][]byte
 
 func main() {
-	for _, l := range readCertificates() {
+	for i, l := range readCertificates() {
+		fmt.Fprintf(os.Stderr, "reading certificate %d\n", i)
 		parseCertificate(l)
 	}
 }
