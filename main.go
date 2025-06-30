@@ -41,7 +41,7 @@ func readCertificates() lines {
 	scanner := bufio.NewScanner(os.Stdin)
 	var input lines
 	for scanner.Scan() {
-		input = append(input, scanner.Bytes())
+		input = append(input, []byte(scanner.Text()))
 	}
 
 	return input
